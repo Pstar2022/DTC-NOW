@@ -1,0 +1,145 @@
+{
+  "design_system": {
+    "app_type": "Dashboard / Utility Panel",
+    "theme": "dark",
+    "archetype": "Archetype 4 (Swiss & High-Contrast) + Terminal Utility Pattern",
+    "emotional_tone": "Precision, Control, Elite Performance, Tactical Tech",
+    "core_principles": [
+      "Data over decoration: Let the real-time metrics be the visual hero.",
+      "Tactical Minimalism: Use 1px solid strokes, sharp edges, and high-contrast glowing accents instead of soft shadows.",
+      "Control Room Grid: Dense, pixel-perfect alignment. No empty jagged spaces.",
+      "Functional Color: 90% monochrome UI. Colors only indicate system health (Good, Warning, Danger) or AI insights."
+    ]
+  },
+  "color_palette": {
+    "backgrounds": {
+      "app": "#050505",
+      "card": "#0A0A0A",
+      "card_hover": "#121212",
+      "ai_surface": "#0a111a"
+    },
+    "borders": {
+      "default": "rgba(255, 255, 255, 0.1)",
+      "focus": "#00FF66",
+      "ai_accent": "rgba(0, 255, 255, 0.3)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A",
+      "inverse": "#000000"
+    },
+    "status_accents": {
+      "healthy": "#00FF66",
+      "warning": "#FFCC00",
+      "critical": "#FF3B30",
+      "ai_insight": "#00FFFF"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Chivo, sans-serif",
+      "body": "IBM Plex Sans, sans-serif",
+      "mono_data": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1_hero": "text-4xl sm:text-5xl font-black tracking-tighter",
+      "h2_section": "text-2xl sm:text-3xl font-bold tracking-tight",
+      "h3_card_title": "text-sm uppercase font-bold tracking-[0.2em] text-zinc-400",
+      "body": "text-sm text-zinc-300 leading-relaxed",
+      "data_large": "text-4xl sm:text-5xl font-mono font-medium tabular-nums tracking-tighter",
+      "data_small": "text-base font-mono tabular-nums text-zinc-300"
+    },
+    "rules": [
+      "All numeric data (CPU %, RAM GB) MUST use 'font-mono tabular-nums' to prevent layout jitter during real-time updates.",
+      "Card titles/headers must be uppercase with wide letter spacing (tracking-[0.2em]) to establish a technical, command-center feel.",
+      "Headings should use font-black or font-bold with tight letter spacing."
+    ]
+  },
+  "spacing_and_layout": {
+    "grid_system": "Mode B: The Control Room Grid",
+    "rules": [
+      "Use strict grid layouts: grid-cols-1 md:grid-cols-3 lg:grid-cols-4 or lg:grid-cols-12.",
+      "Dense spacing: gap-4 or gap-6 for dashboard widgets.",
+      "Cards must stretch to fill vertical space using h-full to prevent jagged rows.",
+      "Padding: Generous inside cards (p-6) to let data breathe, despite tight gaps."
+    ]
+  },
+  "surface_strategies": {
+    "data_cards": {
+      "style": "Grid Borders (The Technical Look)",
+      "classes": "bg-[#0A0A0A] border border-white/10 rounded-sm shadow-none"
+    },
+    "ai_recommendations": {
+      "style": "Retro-Futurism / The Tracing Beam",
+      "classes": "bg-[#0a111a] border border-cyan-500/30 rounded-sm relative overflow-hidden",
+      "extras": "Add a subtle linear gradient background or a top border of 2px solid #00FFFF to denote AI."
+    },
+    "headers": {
+      "style": "Solid Technical Header",
+      "classes": "bg-[#050505] border-b border-white/10 z-50"
+    }
+  },
+  "components": {
+    "charts": {
+      "library": "recharts",
+      "style": "Minimalist area/line charts. No grid lines except minimal horizontal ticks. Stroke width 2px. Smooth curves.",
+      "colors": "Bind line/fill colors to status (e.g., #00FF66 for <50%, #FFCC00 for 50-85%, #FF3B30 for >85%)."
+    },
+    "progress_meters": {
+      "style": "Flat, unrounded progress bars (rounded-none).",
+      "background": "bg-white/10",
+      "fill": "bg-[#00FF66] transition-all duration-300 ease-linear"
+    },
+    "buttons": {
+      "primary": "bg-[#00FF66] text-black font-bold uppercase tracking-wide rounded-sm px-6 py-2 hover:bg-[#00e55b] transition-colors focus:ring-2 focus:ring-[#00FF66]/50 focus:outline-none",
+      "secondary": "bg-transparent border border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-colors rounded-sm px-4 py-2",
+      "danger": "bg-transparent border border-[#FF3B30]/50 text-[#FF3B30] hover:bg-[#FF3B30] hover:text-white transition-colors rounded-sm px-4 py-2"
+    },
+    "tables_process_list": {
+      "style": "Dense tabular layout. border-collapse. Subdued row borders (border-b border-white/5). Hover state: hover:bg-white/5.",
+      "typography": "Use font-mono for process IDs and memory usage columns."
+    }
+  },
+  "icons": {
+    "library": "@phosphor-icons/react",
+    "installation": "yarn add @phosphor-icons/react",
+    "usage": "Use 'weight=\"bold\"' or 'weight=\"duotone\"' for primary navigation, 'weight=\"regular\"' for inline metrics.",
+    "size": "Standardize on size={20} for inline, size={24} for headers/cards."
+  },
+  "motion": {
+    "rules": [
+      "Minimalist and functional. No bouncy or playful animations.",
+      "Data updates: Transition widths/heights linearly, but snap numbers instantly (tabular-nums).",
+      "Interactive states: Fast transitions (duration-150) for hover/active states.",
+      "Hover effects on process lists: Instant background color change to maintain perception of speed."
+    ]
+  },
+  "media": {
+    "images": {
+      "ai_background": {
+        "url": "https://images.unsplash.com/photo-1754738797051-4e0c6983473a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGRhcmslMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3NTQ2NzI4Mnww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract metallic sculpture with iridescent blue and purple hues. Use with extreme opacity reduction (e.g., opacity-10) behind the AI Optimization Recommendations panel to give it depth.",
+        "category": "background"
+      }
+    }
+  },
+  "testing": {
+    "requirements": [
+      "All buttons, navigation links, and action elements MUST have a data-testid attribute.",
+      "Data metric displays MUST have a data-testid for assertion testing (e.g., data-testid='cpu-usage-value').",
+      "Process list items MUST include predictable data-testids (e.g., data-testid='process-kill-button-1234')."
+    ]
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Generate pure .js or .jsx files, NO TYPESCRIPT. Remove any TypeScript type annotations from standard Shadcn UI components if copying them.",
+    "Do NOT center-align everything. This is a technical dashboard; left-align data and labels for quick scannability.",
+    "Implement the 'Control Room' grid layout for the main dashboard. Utilize the full width of the screen (max-w-[1600px] or full width with padding).",
+    "Use Phosphor icons instead of Lucide to maintain the sharp, technical aesthetic.",
+    "Build a 'System Health Score' hero widget as the primary focal point (e.g., a large circular gauge or giant metric number) using the #00FF66 (Volt Green) accent color.",
+    "The 'AI-Powered Optimization Recommendations' section must visually distinct from standard data cards. Use the #00FFFF cyan accent and a subtle background image/gradient.",
+    "Real-time monitoring charts should use 'recharts'. Strip away chart grid lines and legends for a clean, brutalist look. Ensure line strokes are 2px solid.",
+    "For the Task Scheduler and Process Manager, use dense list/table views with clear 'Kill Process' or 'Run Task' danger/primary buttons.",
+    "Never use pure black or grey without a slight tint if needed, though this design specifies absolute obsidian (#050505). Stick strictly to the defined color palette."
+  ]
+}
