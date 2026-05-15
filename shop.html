@@ -390,6 +390,41 @@
     .footer-nav a:hover { color: var(--white); }
     .footer-copy { color: rgba(255,255,255,0.35); }
 
+    /* ─── SERVICE TILES (Get a Quote items) ─────────────── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .service-tile {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.25rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .service-tile-icon { font-size: 1.6rem; margin-bottom: 0.2rem; }
+    .service-tile-name { font-family: 'DM Serif Display', serif; font-size: 1rem; line-height: 1.2; }
+    .service-tile-desc { font-size: 0.82rem; color: var(--text-mid); flex: 1; line-height: 1.5; margin-bottom: 0.75rem; }
+    .btn-quote {
+      background: transparent;
+      color: var(--purple);
+      border: 1.5px solid var(--purple);
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-start;
+    }
+    .btn-quote:hover { background: var(--purple); color: var(--white); }
+
     /* ─── RESPONSIVE ─────────────────────────────────────── */
     @media (max-width: 680px) { .nav-links { display: none; } }
     @media (max-width: 420px) { .product-grid { grid-template-columns: 1fr; } }
@@ -427,8 +462,9 @@
     <h1>Tarot Art.<br><span>Buy It Right Now.</span></h1>
     <p>Digital art prints and cut vinyl decals — made in-house in Downtown Concord. Pay online, get your file the same day, or have your decal shipped to your door.</p>
     <div class="hero-btns">
-      <a href="#original-art" class="btn-primary">Browse the Art</a>
-      <a href="#cut-vinyl" class="btn-ghost">Cut Vinyl Decals</a>
+      <a href="#original-art" class="btn-primary">Original Art</a>
+      <a href="#signs-print" class="btn-ghost">Signs &amp; Print</a>
+      <a href="#cut-vinyl" class="btn-ghost">Cut Vinyl</a>
     </div>
   </div>
 </div>
@@ -440,6 +476,7 @@
 <div class="tab-bar" id="cat-tabs">
   <button class="active" onclick="filterTab(this,'all')">All Products</button>
   <button onclick="filterTab(this,'original')">Original Art</button>
+  <button onclick="filterTab(this,'signs')">Signs &amp; Print</button>
   <button onclick="filterTab(this,'vinyl')">Cut Vinyl Decals</button>
 </div>
 
@@ -566,6 +603,193 @@
       <strong>How digital delivery works:</strong> After paying, email your order confirmation number to
       <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a> and we'll send your
       high-res file within 1 business day. All files print beautifully at 8×10, 11×14, 16×20, and larger.
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+
+<!-- ══════════════════════════════════════════════════════
+     SIGNS & PRINT
+     ══════════════════════════════════════════════════════ -->
+<section class="section bg-subtle" id="signs-print" data-cat="signs">
+  <div class="section-inner">
+    <span class="badge-outline">Signs &amp; Print · Made In-House · Downtown Concord</span>
+    <h2>Signs, Print &amp; <span>Apparel</span></h2>
+    <p class="section-sub">Standard pricing on the most common products — pay online, then email us your artwork and details. Everything made in-house at 32 Union St S.</p>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-image landscape" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          🚩<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">3 × 6 FT</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Vinyl Banner · Full Color</span>
+          <div class="product-name">3×6 Vinyl Banner</div>
+          <p class="product-desc">3 feet × 6 feet full-color vinyl banner. Grommets included. Indoor or outdoor. Same-day available — order by noon, pick up by 5pm in Downtown Concord.</p>
+          <div class="product-footer">
+            <span class="product-price">$70.00</span>
+            <a class="btn-buy" href="#QB-SIGN-1" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          🪧<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">18 × 24" · SINGLE</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Corrugated Yard Sign · Single Sided</span>
+          <div class="product-name">Yard Sign — Single Sided</div>
+          <p class="product-desc">18"×24" corrugated plastic yard sign, single sided, full color. H-stake included. Great for real estate, events, and promotions.</p>
+          <div class="product-footer">
+            <span class="product-price">$25.00</span>
+            <a class="btn-buy" href="#QB-SIGN-2" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          🪧<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">18 × 24" · DOUBLE</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Corrugated Yard Sign · Double Sided</span>
+          <div class="product-name">Yard Sign — Double Sided</div>
+          <p class="product-desc">18"×24" corrugated plastic yard sign, printed on both sides. H-stake included. Maximum visibility from every direction.</p>
+          <div class="product-footer">
+            <span class="product-price">$35.00</span>
+            <a class="btn-buy" href="#QB-SIGN-3" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          🚗<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">24 × 12" PAIR</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Vehicle Magnets · Pair</span>
+          <div class="product-name">Vehicle Magnets — 24"×12" Pair</div>
+          <p class="product-desc">Pair of 24"×12" full-color vehicle magnets. Stick to any metal surface — doors, hoods, tailgates. Turn your vehicle into a billboard, take them off anytime.</p>
+          <div class="product-footer">
+            <span class="product-price">$75.00</span>
+            <a class="btn-buy" href="#QB-SIGN-4" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          ⭐<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">3" CIRCLES · QTY 100</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Custom Stickers · 3" Circle</span>
+          <div class="product-name">3" Circle Stickers — 100 Pack</div>
+          <p class="product-desc">100 custom 3" circle stickers at $0.40 each. Full color, weatherproof vinyl. Great for branding, events, and giveaways. Email your artwork after checkout.</p>
+          <div class="product-footer">
+            <span class="product-price">$40.00</span>
+            <a class="btn-buy" href="#QB-SIGN-5" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          👕<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">CUSTOM PRINTED</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Apparel · Custom Print</span>
+          <div class="product-name">Custom T-Shirt</div>
+          <p class="product-desc">Custom printed t-shirt, starting at $22. Full-color design. Email your artwork, shirt color preference, and size after checkout.</p>
+          <div class="product-footer">
+            <span class="product-price">$22.00</span>
+            <a class="btn-buy" href="#QB-SIGN-6" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          🔲<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">12 × 18" ALUMINUM</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Aluminum Sign · Single Sided</span>
+          <div class="product-name">Aluminum Sign — 12"×18"</div>
+          <p class="product-desc">12"×18" aluminum sign, single sided, full color. Durable, rust-proof, and ready to hang. Perfect for business, parking, and property signs.</p>
+          <div class="product-footer">
+            <span class="product-price">$30.00</span>
+            <a class="btn-buy" href="#QB-SIGN-7" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape" style="font-size:2.5rem; background:linear-gradient(135deg,#1e0a4c,#7c3aed); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.4rem;">
+          🖼️<span style="font-size:0.75rem; font-weight:700; letter-spacing:0.08em; font-family:'Inter',sans-serif;">2 × 3 FT EASEL</span>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Foam Board · Easel Sign</span>
+          <div class="product-name">Foam Board Easel Sign — 2'×3'</div>
+          <p class="product-desc">Full 2'×3' foam board easel sign, full color. Freestanding — no wall needed. Great for events, storefronts, lobbies, and grand openings.</p>
+          <div class="product-footer">
+            <span class="product-price">$50.00</span>
+            <a class="btn-buy" href="#QB-SIGN-8" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+    <!-- Custom & Complex Projects -->
+    <h3 style="font-family:'DM Serif Display',serif; font-size:1.4rem; margin: 2.5rem 0 0.35rem;">Need Something Custom?</h3>
+    <p style="color:var(--text-mid); font-size:0.93rem; margin-bottom:0;">These projects are always quoted by job — click "Get a Quote" and we'll get back to you same day.</p>
+
+    <div class="service-grid">
+      <div class="service-tile">
+        <span class="service-tile-icon">🏪</span>
+        <div class="service-tile-name">Storefront Lettering</div>
+        <p class="service-tile-desc">Window vinyl, channel letters, awning graphics, and full storefront builds.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🚛</span>
+        <div class="service-tile-name">Vehicle Lettering & Wraps</div>
+        <p class="service-tile-desc">Full wraps, partial wraps, lettering, and fleet graphics for any vehicle.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">💡</span>
+        <div class="service-tile-name">Lighted Sign Boxes</div>
+        <p class="service-tile-desc">Illuminated cabinet signs and backlit displays for maximum after-dark visibility.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🏗️</span>
+        <div class="service-tile-name">Large Outdoor Signs</div>
+        <p class="service-tile-desc">Monument signs, post & panel, and large-format outdoor installations.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🖼️</span>
+        <div class="service-tile-name">Wall Graphics & Murals</div>
+        <p class="service-tile-desc">Full-wall vinyl graphics, branded office murals, and decorative wall installs.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🎪</span>
+        <div class="service-tile-name">Trade Show Displays</div>
+        <p class="service-tile-desc">Retractable banners, table throws, backdrops, and full booth setups.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>After you pay:</strong> Email <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>
+      with your order number and artwork (PNG, PDF, AI, or EPS). Have questions first?
+      Call <a href="tel:7047234020">(704) 723-4020</a> — we're in Downtown Concord, Mon–Fri.
     </div>
   </div>
 </section>
@@ -703,7 +927,7 @@
     });
 
     if (cat === 'original') document.getElementById('original-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (cat === 'tarot')    document.getElementById('tarot-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (cat === 'signs')    document.getElementById('signs-print').scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (cat === 'vinyl')    document.getElementById('cut-vinyl').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
