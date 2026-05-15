@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shop | Purple Star Signs — Concord, NC</title>
-  <meta name="description" content="Digital art prints by Purple Star Signs — book nook dioramas, tarot card art, and cut vinyl decals. Buy, download, and print instantly." />
+  <meta name="description" content="Digital tarot art prints and cut vinyl decals by Purple Star Signs, Concord NC. Diorama stacks, Van Gogh series, Awakened Shadow series — buy and download instantly." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -49,13 +49,12 @@
       top: 0;
       z-index: 100;
     }
-
     .nav-logo {
       display: flex;
       align-items: center;
       text-decoration: none;
     }
-    /* Replace the span below with:
+    /* Swap this span for your logo:
        <img src="images/logo.png" alt="Purple Star Signs" style="height:44px;" /> */
     .nav-logo-text {
       font-family: 'DM Serif Display', serif;
@@ -63,7 +62,6 @@
       color: var(--purple);
       white-space: nowrap;
     }
-
     .nav-links {
       display: flex;
       align-items: center;
@@ -132,7 +130,6 @@
       color: rgba(255,255,255,0.9);
       margin-bottom: 1.25rem;
     }
-
     .badge-outline {
       display: inline-block;
       border: 1.5px solid var(--border);
@@ -160,7 +157,6 @@
       max-width: 540px;
       margin-bottom: 2rem;
     }
-
     .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
     /* ─── CATEGORY TABS ──────────────────────────────────── */
@@ -204,8 +200,30 @@
     .section-sub {
       color: var(--text-mid);
       font-size: 0.97rem;
-      max-width: 560px;
+      max-width: 580px;
       margin-bottom: 2.5rem;
+    }
+
+    /* ─── SERIES DIVIDERS within product grid ────────────── */
+    .series-label {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem 0 0.25rem;
+    }
+    .series-label span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--purple);
+      white-space: nowrap;
+    }
+    .series-label hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid var(--border);
     }
 
     /* ─── PRODUCT GRID ───────────────────────────────────── */
@@ -239,7 +257,8 @@
       justify-content: center;
     }
     .product-image.landscape { aspect-ratio: 16 / 9; }
-    .product-image.square    { aspect-ratio: 1 / 1; }
+    .product-image.square    { aspect-ratio: 1 / 1;  }
+    .product-image.tall      { aspect-ratio: 2 / 3;  }
 
     .product-image img {
       width: 100%;
@@ -255,7 +274,6 @@
       display: flex;
       flex-direction: column;
     }
-
     .product-tag {
       font-size: 0.7rem;
       font-weight: 700;
@@ -264,21 +282,18 @@
       color: var(--purple);
       margin-bottom: 0.35rem;
     }
-
     .product-name {
       font-family: 'DM Serif Display', serif;
       font-size: 1.1rem;
       margin-bottom: 0.4rem;
       line-height: 1.25;
     }
-
     .product-desc {
       font-size: 0.85rem;
       color: var(--text-mid);
       margin-bottom: 1rem;
       flex: 1;
     }
-
     .product-footer {
       display: flex;
       align-items: center;
@@ -286,7 +301,6 @@
       gap: 0.5rem;
       margin-top: auto;
     }
-
     .product-price {
       font-size: 1.25rem;
       font-weight: 700;
@@ -296,9 +310,8 @@
     /*
       BUY NOW BUTTONS — QuickBooks Payment Links
       ──────────────────────────────────────────
-      For each product, go to QuickBooks Online → + New → Payment Link
-      (or Sales → Payment Links), set the amount, copy the URL, and
-      paste it in the href below in place of #QB-LINK-N.
+      QuickBooks Online → + New → Payment Link
+      Set the amount, copy the URL, replace #QB-LINK-N below.
     */
     .btn-buy {
       background: var(--purple);
@@ -349,7 +362,6 @@
       gap: 1.25rem;
       margin-top: 2rem;
     }
-
     .step-card {
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.14);
@@ -361,12 +373,7 @@
     .step-card p  { font-size: 0.84rem; color: rgba(255,255,255,0.68); line-height: 1.55; }
     .step-card a  { color: var(--purple-light); }
 
-    /* ─── DIVIDER ────────────────────────────────────────── */
-    .section-divider {
-      border: none;
-      border-top: 1.5px solid var(--border);
-      margin: 0 1.5rem;
-    }
+    .section-divider { border: none; border-top: 1.5px solid var(--border); margin: 0 1.5rem; }
 
     /* ─── FOOTER ─────────────────────────────────────────── */
     footer {
@@ -376,21 +383,9 @@
       text-align: center;
       font-size: 0.84rem;
     }
-    .footer-brand {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
+    .footer-brand { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.4rem; }
     .footer-address { margin-bottom: 1.1rem; }
-    .footer-nav {
-      display: flex;
-      gap: 1.1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 1.25rem;
-      list-style: none;
-    }
+    .footer-nav { display: flex; gap: 1.1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.25rem; list-style: none; }
     .footer-nav a { color: var(--purple-light); text-decoration: none; }
     .footer-nav a:hover { color: var(--white); }
     .footer-copy { color: rgba(255,255,255,0.35); }
@@ -404,12 +399,9 @@
 
 <!-- ══════════════════════════════════════════════════════
      NAVIGATION
-     Update the href links to match your actual page URLs.
      ══════════════════════════════════════════════════════ -->
 <nav>
   <a class="nav-logo" href="https://purplestarsigns.com">
-    <!-- Swap this span for your logo image:
-         <img src="images/logo.png" alt="Purple Star Signs" style="height:44px;" /> -->
     <span class="nav-logo-text">☆ Purple Star Signs</span>
   </a>
   <ul class="nav-links">
@@ -432,12 +424,11 @@
 <div class="hero">
   <div class="hero-inner">
     <span class="badge">Purple Star Signs — Online Shop</span>
-    <h1>Art You Can Buy<br><span>Right Now.</span></h1>
-    <p>Digital art prints, tarot-inspired designs, miniature book nook scenes, and cut vinyl decals — all made in-house. Pay online and we deliver straight to your inbox or your door.</p>
+    <h1>Tarot Art.<br><span>Buy It Right Now.</span></h1>
+    <p>Digital art prints and cut vinyl decals — made in-house in Downtown Concord. Pay online, get your file the same day, or have your decal shipped to your door.</p>
     <div class="hero-btns">
-      <a href="#book-nook" class="btn-primary">Book Nook Art</a>
-      <a href="#tarot-art" class="btn-ghost">Tarot Prints</a>
-      <a href="#cut-vinyl" class="btn-ghost">Cut Vinyl</a>
+      <a href="#tarot-art" class="btn-primary">Browse Tarot Art</a>
+      <a href="#cut-vinyl" class="btn-ghost">Cut Vinyl Decals</a>
     </div>
   </div>
 </div>
@@ -448,51 +439,71 @@
      ══════════════════════════════════════════════════════ -->
 <div class="tab-bar" id="cat-tabs">
   <button class="active" onclick="filterTab(this,'all')">All Products</button>
-  <button onclick="filterTab(this,'book-nook')">Book Nook Art</button>
-  <button onclick="filterTab(this,'tarot')">Tarot Prints</button>
-  <button onclick="filterTab(this,'vinyl')">Cut Vinyl</button>
+  <button onclick="filterTab(this,'tarot')">Tarot Art Prints</button>
+  <button onclick="filterTab(this,'vinyl')">Cut Vinyl Decals</button>
 </div>
 
 
 <!-- ══════════════════════════════════════════════════════
-     BOOK NOOK ART
-     Images go in an "images/" folder on your server.
-     File names to use are listed next to each product.
+     TAROT ART PRINTS  (all digital art lives here)
+
+     IMAGE FILES — put these in an "images/" folder on
+     your server, in the same location as shop.html.
+
+     Rename your uploaded files like this:
+       96cdd301-22757.png  →  xvi-tower-awakened-shadow.png
+       312c0579-22758.png  →  tarot-stack-diorama.png
+       2689ee9e-22759.png  →  path-awakened-shadow-cosmic-joy.png
+       246e3eeb-22760.png  →  van-gogh-tarot-book-nook.png
+       da36bebe-22761.png  →  ascension-awakened-shadow.png
+       3e66ec71-22762.png  →  ix-swords-ten-pentacles.png
+       7c18c8a9-22763.png  →  van-gogh-tarot-magician.png
+       cd2045aa-22764.png  →  the-wish-mind-body-spirit.png
+       82d5c87d-22765.png  →  opp-shop.png
+       2e7dd4a2-22766.png  →  nexus-bondage-broken-promise.png
+       32860b9f-22747.png  →  celestial-alchemy-rational-will.png
+       0013afb8-22748.png  →  celestial-opportunity-deep-harvest.png
+       ff7d1f08-22750.png  →  van-gogh-the-star.png
+       08e5068f-22751.png  →  van-gogh-tower-four-wands.png
+       4b35a201-22754.png  →  empress-pentacles-justice-diorama.png
+       (4c78fbb7-22749.png and 6ff6e789-22752.png are duplicates — skip)
      ══════════════════════════════════════════════════════ -->
-<section class="section bg-subtle" id="book-nook" data-cat="book-nook">
+<section class="section bg-subtle" id="tarot-art" data-cat="tarot">
   <div class="section-inner">
-    <span class="badge-outline">Book Nook Art</span>
-    <h2>Miniature Worlds.<br><span>Incredible Detail.</span></h2>
-    <p class="section-sub">Hyper-detailed diorama-style digital art prints. Print these at any size — they look stunning framed on a wall or as a desktop print.</p>
+    <span class="badge-outline">Digital Downloads · Tarot Art</span>
+    <h2>Tarot Art &amp; <span>Prints</span></h2>
+    <p class="section-sub">Original tarot art in multiple series — diorama stacks, Van Gogh-style card art, and the Awakened Shadow collection. Buy and print at any size.</p>
 
     <div class="product-grid">
 
-      <!-- Image file: images/opp-shop-book-nook.png -->
+      <!-- ════ DIORAMA STACKS ════════════════════════════ -->
+      <div class="series-label"><span>Diorama Stacks</span><hr /></div>
+
+      <!-- File: images/opp-shop.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/opp-shop-book-nook.png" alt="The Opp Shop Book Nook Art Print" />
+          <img src="images/opp-shop.png" alt="The Opp Shop — Tarot Diorama Art Print" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Book Nook Art</span>
+          <span class="product-tag">Diorama · Digital Download</span>
           <div class="product-name">The Opp Shop</div>
-          <p class="product-desc">A Victorian-style opportunity shop packed with tiny wonders — clocks, shelves, signs, and "Opportunity Awaits." Gorgeous framed print for any room.</p>
+          <p class="product-desc">A richly layered diorama of an opportunity shop overflowing with finds. "Opportunity Awaits" — a piece about abundance, discovery, and the Wheel of Fortune.</p>
           <div class="product-footer">
             <span class="product-price">$15.00</span>
-            <!-- Replace href value with your QuickBooks payment link -->
             <a class="btn-buy" href="#QB-LINK-1" target="_blank" rel="noopener">Buy Now</a>
           </div>
         </div>
       </div>
 
-      <!-- Image file: images/the-wish-mind-body-spirit.png -->
+      <!-- File: images/the-wish-mind-body-spirit.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/the-wish-mind-body-spirit.png" alt="The Wish — Mind Body Spirit Book Nook Art" />
+          <img src="images/the-wish-mind-body-spirit.png" alt="The Wish — Mind Body Spirit Diorama Art Print" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Book Nook Art</span>
+          <span class="product-tag">Diorama · Digital Download</span>
           <div class="product-name">The Wish — Mind, Body &amp; Spirit</div>
-          <p class="product-desc">Three-tiered diorama journeying through Mind, Body, and Spirit under a starlit sky. A powerful piece for meditation spaces, offices, and yoga studios.</p>
+          <p class="product-desc">A three-tiered diorama journeying through Mind, Body, and Spirit beneath a starlit sky. Powerful piece for meditation spaces, yoga studios, and home altars.</p>
           <div class="product-footer">
             <span class="product-price">$15.00</span>
             <a class="btn-buy" href="#QB-LINK-2" target="_blank" rel="noopener">Buy Now</a>
@@ -500,15 +511,15 @@
         </div>
       </div>
 
-      <!-- Image file: images/tarot-stack-diorama.png -->
+      <!-- File: images/tarot-stack-diorama.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/tarot-stack-diorama.png" alt="Tarot Stack Diorama Art Print" />
+          <img src="images/tarot-stack-diorama.png" alt="Tarot Stack Diorama — Page of Wands, IV Pentacles, VI Cups, King of Swords" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Book Nook Art</span>
-          <div class="product-name">Tarot Stack Diorama</div>
-          <p class="product-desc">Four tarot cards stacked as living worlds — Page of Wands, IV of Pentacles, VI of Cups, King of Swords. Incredible layered depth and detail.</p>
+          <span class="product-tag">Diorama · Digital Download</span>
+          <div class="product-name">Tarot Stack — Wands, Pentacles, Cups &amp; Swords</div>
+          <p class="product-desc">Four living tarot worlds stacked — Page of Wands, IV of Pentacles, VI of Cups, King of Swords. Each card a miniature scene with incredible layered depth.</p>
           <div class="product-footer">
             <span class="product-price">$18.00</span>
             <a class="btn-buy" href="#QB-LINK-3" target="_blank" rel="noopener">Buy Now</a>
@@ -516,15 +527,15 @@
         </div>
       </div>
 
-      <!-- Image file: images/van-gogh-tarot-book-nook.png -->
+      <!-- File: images/empress-pentacles-justice-diorama.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/van-gogh-tarot-book-nook.png" alt="Van Gogh Tarot Book Nook Art" />
+          <img src="images/empress-pentacles-justice-diorama.png" alt="The Empress, II of Pentacles, XI Justice Diorama Stack" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Book Nook Art</span>
-          <div class="product-name">Van Gogh Tarot — Book Nook</div>
-          <p class="product-desc">A tarot scene reimagined in Van Gogh's swirling style, built as a 3D diorama world. Starry night meets the mystical arts in one stunning piece.</p>
+          <span class="product-tag">Diorama · Digital Download</span>
+          <div class="product-name">Empress, Pentacles &amp; Justice Stack</div>
+          <p class="product-desc">Three-card diorama stack — The Empress in full abundance, II of Pentacles in motion, XI Justice in stillness. Rich, earthy tones and extraordinary detail.</p>
           <div class="product-footer">
             <span class="product-price">$18.00</span>
             <a class="btn-buy" href="#QB-LINK-4" target="_blank" rel="noopener">Buy Now</a>
@@ -532,56 +543,34 @@
         </div>
       </div>
 
-    </div><!-- /product-grid -->
-
-    <div class="note-box">
-      <strong>How digital delivery works:</strong> After paying, email your order confirmation to
-      <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a> and we'll send your
-      high-res file within 1 business day. Files print beautifully at 8×10, 11×14, or 16×20.
-    </div>
-  </div>
-</section>
-
-
-<hr class="section-divider" />
-
-
-<!-- ══════════════════════════════════════════════════════
-     TAROT ART PRINTS
-     ══════════════════════════════════════════════════════ -->
-<section class="section" id="tarot-art" data-cat="tarot">
-  <div class="section-inner">
-    <span class="badge-outline">Tarot Art Prints</span>
-    <h2>The Cards, <span>Reimagined.</span></h2>
-    <p class="section-sub">Original digital tarot artwork — rich detail, deep symbolism, and stunning color. Print and frame or use as altar art, wall décor, and gifts for tarot lovers.</p>
-
-    <div class="product-grid">
-
-      <!-- Image file: images/van-gogh-tarot-magician.png -->
+      <!-- File: images/van-gogh-tarot-book-nook.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/van-gogh-tarot-magician.png" alt="Van Gogh Tarot — The Magician" />
+          <img src="images/van-gogh-tarot-book-nook.png" alt="Van Gogh Tarot Book Nook Diorama Art" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Tarot Art</span>
-          <div class="product-name">Van Gogh Tarot — The Magician</div>
-          <p class="product-desc">The Magician card rendered in Van Gogh's post-impressionist style. Swirling skies, golden coins, and the tools of manifestation. A collector's piece.</p>
+          <span class="product-tag">Diorama · Van Gogh Series</span>
+          <div class="product-name">Van Gogh Tarot — Diorama</div>
+          <p class="product-desc">A tarot scene built as a three-dimensional diorama world in Van Gogh's swirling style. Starry skies and golden fields meet the mysteries of the cards.</p>
           <div class="product-footer">
-            <span class="product-price">$10.00</span>
+            <span class="product-price">$18.00</span>
             <a class="btn-buy" href="#QB-LINK-5" target="_blank" rel="noopener">Buy Now</a>
           </div>
         </div>
       </div>
 
-      <!-- Image file: images/path-awakened-shadow-cosmic-joy.png -->
+      <!-- ════ VAN GOGH SERIES ══════════════════════════ -->
+      <div class="series-label"><span>Van Gogh Series</span><hr /></div>
+
+      <!-- File: images/van-gogh-tarot-magician.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/path-awakened-shadow-cosmic-joy.png" alt="Path of Awakened Shadow and Cosmic Joy" />
+          <img src="images/van-gogh-tarot-magician.png" alt="Van Gogh Tarot — The Magician" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Tarot Art</span>
-          <div class="product-name">Path of Awakened Shadow &amp; Cosmic Joy</div>
-          <p class="product-desc">A radiant sun presides over a gathering of souls on the path to awakening. Rich golden light, cosmic energy, and deep spiritual symbolism.</p>
+          <span class="product-tag">Card Art · Van Gogh Series</span>
+          <div class="product-name">Van Gogh Tarot — The Magician</div>
+          <p class="product-desc">The Magician rendered in Van Gogh's post-impressionist style. Swirling skies, golden coins, and the four tools of manifestation on the table before him.</p>
           <div class="product-footer">
             <span class="product-price">$10.00</span>
             <a class="btn-buy" href="#QB-LINK-6" target="_blank" rel="noopener">Buy Now</a>
@@ -589,31 +578,31 @@
         </div>
       </div>
 
-      <!-- Image file: images/ascension-awakened-shadow.png -->
+      <!-- File: images/van-gogh-the-star.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/ascension-awakened-shadow.png" alt="Ascension of Awakened Shadow and Collaborative Joy" />
+          <img src="images/van-gogh-the-star.png" alt="Van Gogh Tarot — The Star" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Tarot Art</span>
-          <div class="product-name">Ascension of Awakened Shadow</div>
-          <p class="product-desc">A three-panel journey — 10 of Pentacles, Queen of Pentacles, King of Swords — tracing the path from shadow into collaborative joy and full ascension.</p>
+          <span class="product-tag">Card Art · Van Gogh Series</span>
+          <div class="product-name">Van Gogh Tarot — The Star</div>
+          <p class="product-desc">The Star card — hope, renewal, and celestial guidance — painted in Van Gogh's signature swirling brushstrokes under a golden pentacle sky.</p>
           <div class="product-footer">
-            <span class="product-price">$12.00</span>
+            <span class="product-price">$10.00</span>
             <a class="btn-buy" href="#QB-LINK-7" target="_blank" rel="noopener">Buy Now</a>
           </div>
         </div>
       </div>
 
-      <!-- Image file: images/xvi-tower-awakened-shadow.png -->
+      <!-- File: images/van-gogh-tower-four-wands.png -->
       <div class="product-card">
         <div class="product-image">
-          <img src="images/xvi-tower-awakened-shadow.png" alt="XVI — Path of Awakened Shadow" />
+          <img src="images/van-gogh-tower-four-wands.png" alt="Van Gogh Tarot — XVI and IV" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Tarot Art</span>
-          <div class="product-name">XVI — Path of Awakened Shadow</div>
-          <p class="product-desc">The Tower card, reimagined as a spiritual awakening. A crowned figure looks out over a celestial path — dramatic, symbolic, and deeply detailed.</p>
+          <span class="product-tag">Card Art · Van Gogh Series</span>
+          <div class="product-name">Van Gogh Tarot — XVI &amp; IV</div>
+          <p class="product-desc">Twin towers, a river of stars, and the charged energy of two major cards in Van Gogh's vivid style. Dramatic contrast of structure and flow.</p>
           <div class="product-footer">
             <span class="product-price">$10.00</span>
             <a class="btn-buy" href="#QB-LINK-8" target="_blank" rel="noopener">Buy Now</a>
@@ -621,15 +610,15 @@
         </div>
       </div>
 
-      <!-- Image file: images/nexus-bondage-broken-promise.png -->
+      <!-- File: images/celestial-alchemy-rational-will.png -->
       <div class="product-card">
-        <div class="product-image landscape">
-          <img src="images/nexus-bondage-broken-promise.png" alt="The Nexus of Bondage and Broken Promise" />
+        <div class="product-image">
+          <img src="images/celestial-alchemy-rational-will.png" alt="The Celestial Alchemy and Rational Will" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Tarot Art · Wide Format</span>
-          <div class="product-name">The Nexus of Bondage &amp; Broken Promise</div>
-          <p class="product-desc">A dramatic wide-format piece — two figures bound by chains around a glowing orb under stormy skies. Powerful altar art or statement wall print.</p>
+          <span class="product-tag">Card Art · Van Gogh Series</span>
+          <div class="product-name">Celestial Alchemy &amp; Rational Will</div>
+          <p class="product-desc">IV · XVI · XVII · XIV — four cards, one angel, one blazing star. Active Will and Guided Balance meet in a Van Gogh-style cosmic composition.</p>
           <div class="product-footer">
             <span class="product-price">$12.00</span>
             <a class="btn-buy" href="#QB-LINK-9" target="_blank" rel="noopener">Buy Now</a>
@@ -637,18 +626,101 @@
         </div>
       </div>
 
-      <!-- Image file: images/ix-swords-ten-pentacles.png -->
+      <!-- File: images/celestial-opportunity-deep-harvest.png -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="images/celestial-opportunity-deep-harvest.png" alt="Celestial Opportunity Deep Harvest Path of Guided Stability" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Card Art · Van Gogh Series</span>
+          <div class="product-name">Celestial Opportunity &amp; Deep Harvest</div>
+          <p class="product-desc">A winding stairway path under a compass-rose sky — opportunity, harvest, and guided stability woven into a single richly detailed card portrait.</p>
+          <div class="product-footer">
+            <span class="product-price">$10.00</span>
+            <a class="btn-buy" href="#QB-LINK-10" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ AWAKENED SHADOW SERIES ══════════════════════ -->
+      <div class="series-label"><span>Awakened Shadow Series</span><hr /></div>
+
+      <!-- File: images/path-awakened-shadow-cosmic-joy.png -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="images/path-awakened-shadow-cosmic-joy.png" alt="Path of Awakened Shadow and Cosmic Joy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Card Art · Awakened Shadow Series</span>
+          <div class="product-name">Path of Awakened Shadow &amp; Cosmic Joy</div>
+          <p class="product-desc">A radiant sun presides over a gathering of souls on the path to awakening. Rich golden light, cosmic energy, and deep spiritual symbolism in portrait format.</p>
+          <div class="product-footer">
+            <span class="product-price">$10.00</span>
+            <a class="btn-buy" href="#QB-LINK-11" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- File: images/ascension-awakened-shadow.png -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="images/ascension-awakened-shadow.png" alt="Ascension of Awakened Shadow and Collaborative Joy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Card Art · Awakened Shadow Series</span>
+          <div class="product-name">Ascension of Awakened Shadow</div>
+          <p class="product-desc">A three-panel journey — 10 of Pentacles, Queen of Pentacles, King of Swords — tracing the path from shadow into collaborative joy and full ascension.</p>
+          <div class="product-footer">
+            <span class="product-price">$12.00</span>
+            <a class="btn-buy" href="#QB-LINK-12" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- File: images/xvi-tower-awakened-shadow.png -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="images/xvi-tower-awakened-shadow.png" alt="XVI Tower — Path of Awakened Shadow" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Card Art · Awakened Shadow Series</span>
+          <div class="product-name">XVI — Path of Awakened Shadow</div>
+          <p class="product-desc">The Tower card reimagined as awakening, not destruction. A crowned figure looks out over a celestial path — dramatic, symbolic, and deeply detailed.</p>
+          <div class="product-footer">
+            <span class="product-price">$10.00</span>
+            <a class="btn-buy" href="#QB-LINK-13" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- File: images/nexus-bondage-broken-promise.png -->
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="images/nexus-bondage-broken-promise.png" alt="The Nexus of Bondage and Broken Promise" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Wide Format · Awakened Shadow Series</span>
+          <div class="product-name">The Nexus of Bondage &amp; Broken Promise</div>
+          <p class="product-desc">Two figures bound by chains around a glowing orb beneath a stormy sky. A dramatic wide-format statement piece — powerful altar art or oversized wall print.</p>
+          <div class="product-footer">
+            <span class="product-price">$12.00</span>
+            <a class="btn-buy" href="#QB-LINK-14" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- File: images/ix-swords-ten-pentacles.png -->
       <div class="product-card">
         <div class="product-image landscape">
           <img src="images/ix-swords-ten-pentacles.png" alt="IX of Swords and Ten of Pentacles" />
         </div>
         <div class="product-info">
-          <span class="product-tag">Digital Download · Tarot Art · Wide Format</span>
+          <span class="product-tag">Wide Format · Awakened Shadow Series</span>
           <div class="product-name">IX of Swords &amp; Ten of Pentacles</div>
           <p class="product-desc">A panoramic two-card spread — the sleepless anguish of Nine of Swords alongside the abundant legacy of Ten of Pentacles. Striking side-by-side composition.</p>
           <div class="product-footer">
             <span class="product-price">$12.00</span>
-            <a class="btn-buy" href="#QB-LINK-10" target="_blank" rel="noopener">Buy Now</a>
+            <a class="btn-buy" href="#QB-LINK-15" target="_blank" rel="noopener">Buy Now</a>
           </div>
         </div>
       </div>
@@ -656,9 +728,9 @@
     </div><!-- /product-grid -->
 
     <div class="note-box">
-      <strong>After you pay:</strong> Email your order number to
+      <strong>How digital delivery works:</strong> After paying, email your order confirmation number to
       <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a> and we'll send your
-      high-res download within 1 business day. All files are print-ready at multiple sizes.
+      high-res file within 1 business day. All files print beautifully at 8×10, 11×14, 16×20, and larger.
       Questions? Call <a href="tel:7047234020">(704) 723-4020</a>.
     </div>
   </div>
@@ -671,79 +743,78 @@
 <!-- ══════════════════════════════════════════════════════
      CUT VINYL DECALS
      ══════════════════════════════════════════════════════ -->
-<section class="section bg-subtle" id="cut-vinyl" data-cat="vinyl">
+<section class="section" id="cut-vinyl" data-cat="vinyl">
   <div class="section-inner">
     <span class="badge-outline">Cut Vinyl Decals</span>
     <h2>Stick It. <span>Show It Off.</span></h2>
-    <p class="section-sub">Small cut-vinyl decals made right here in our Concord shop. Car windows, laptops, water bottles, bumpers — wherever you want a little personality.</p>
+    <p class="section-sub">Cut-vinyl decals made in our Concord shop. Car windows, laptops, water bottles — wherever you want a little personality. Ships to you or pick up free.</p>
 
     <div class="product-grid">
 
       <div class="product-card">
-        <div class="product-image square" style="font-size:3.5rem; background:var(--purple-pale);">🔵</div>
+        <div class="product-image square" style="font-size:3.5rem;">🔵</div>
         <div class="product-info">
           <span class="product-tag">Cut Vinyl · Ships in 2–3 Days</span>
           <div class="product-name">3" Circle Vinyl Decal</div>
           <p class="product-desc">Three-inch weatherproof cut-vinyl circle with your initials or short text. Great for car windows, water bottles, and laptops. You pick the color.</p>
           <div class="product-footer">
             <span class="product-price">$5.00</span>
-            <a class="btn-buy" href="#QB-LINK-11" target="_blank" rel="noopener">Buy Now</a>
+            <a class="btn-buy" href="#QB-LINK-16" target="_blank" rel="noopener">Buy Now</a>
           </div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-image square" style="font-size:3.5rem; background:var(--purple-pale);">⭕</div>
+        <div class="product-image square" style="font-size:3.5rem;">⭕</div>
         <div class="product-info">
           <span class="product-tag">Cut Vinyl · Ships in 2–3 Days</span>
           <div class="product-name">5" Circle Vinyl Decal</div>
-          <p class="product-desc">Five-inch weatherproof cut-vinyl circle — bigger and bolder, perfect for rear car windows. Your initials or short text in the color of your choice.</p>
+          <p class="product-desc">Five-inch weatherproof cut-vinyl circle — bigger and bolder. Perfect for rear car windows. Your initials or short text in the color of your choice.</p>
           <div class="product-footer">
             <span class="product-price">$8.00</span>
-            <a class="btn-buy" href="#QB-LINK-12" target="_blank" rel="noopener">Buy Now</a>
+            <a class="btn-buy" href="#QB-LINK-17" target="_blank" rel="noopener">Buy Now</a>
           </div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-image square" style="font-size:3.5rem; background:var(--purple-pale);">🏷️</div>
+        <div class="product-image square" style="font-size:3.5rem;">🏷️</div>
         <div class="product-info">
           <span class="product-tag">Cut Vinyl · Ships in 2–3 Days</span>
           <div class="product-name">3-Pack · 3" Circle Decals</div>
-          <p class="product-desc">Three 3-inch circle decals — great for gifts or sharing with friends. Same initials on all three, or mix and match. Just tell us when you email.</p>
+          <p class="product-desc">Three 3-inch circle decals for the price of two and a half. Great as gifts or to share with friends. Same initials or mix and match — just tell us.</p>
           <div class="product-footer">
             <span class="product-price">$12.00</span>
-            <a class="btn-buy" href="#QB-LINK-13" target="_blank" rel="noopener">Buy Now</a>
+            <a class="btn-buy" href="#QB-LINK-18" target="_blank" rel="noopener">Buy Now</a>
           </div>
         </div>
       </div>
 
-    </div><!-- /product-grid -->
+    </div>
 
     <div class="note-box">
       <strong>After you pay:</strong> Email <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>
       with your order number, the <strong>initials or text</strong> you want, and your <strong>color choice.</strong>
-      We'll ship within 2–3 business days — or pick up free at 32 Union St S, Downtown Concord.
+      Ships in 2–3 business days — or pick up free at 32 Union St S, Downtown Concord.
     </div>
   </div>
 </section>
 
 
 <!-- ══════════════════════════════════════════════════════
-     HOW IT WORKS  (dark section)
+     HOW IT WORKS
      ══════════════════════════════════════════════════════ -->
 <div class="dark-section">
   <section class="section">
     <div class="section-inner">
       <span class="badge-outline">How It Works</span>
       <h2>Three Steps.<br><span>That's It.</span></h2>
-      <p class="section-sub">No account needed, no complicated checkout. Just pick it, pay, and we take care of the rest.</p>
-
+      <p class="section-sub">No account needed, no complicated checkout. Pick it, pay it, and we take care of the rest.</p>
       <div class="steps-grid">
         <div class="step-card">
           <span class="step-icon">1️⃣</span>
-          <h3>Pick Your Product</h3>
-          <p>Browse the shop, find what you want, and click "Buy Now."</p>
+          <h3>Pick Your Print</h3>
+          <p>Browse the shop, find what speaks to you, and click "Buy Now."</p>
         </div>
         <div class="step-card">
           <span class="step-icon">2️⃣</span>
@@ -752,13 +823,13 @@
         </div>
         <div class="step-card">
           <span class="step-icon">3️⃣</span>
-          <h3>Email Us Your Details</h3>
-          <p>Send your order confirmation to <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>. For vinyl, include your initials and color choice.</p>
+          <h3>Email Us Your Order</h3>
+          <p>Send your confirmation to <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>. For vinyl, include your initials and color choice.</p>
         </div>
         <div class="step-card">
           <span class="step-icon">📦</span>
           <h3>We Deliver</h3>
-          <p>Digital files in your inbox within 1 business day. Vinyl ships in 2–3 days or pick up in Concord — free.</p>
+          <p>Digital files to your inbox within 1 business day. Vinyl ships in 2–3 days or pick up in Concord — free.</p>
         </div>
       </div>
     </div>
@@ -787,7 +858,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════
-     CATEGORY TAB FILTER
+     TAB FILTER SCRIPT
      ══════════════════════════════════════════════════════ -->
 <script>
   function filterTab(btn, cat) {
@@ -795,18 +866,11 @@
     btn.classList.add('active');
 
     document.querySelectorAll('[data-cat]').forEach(sec => {
-      if (cat === 'all' || sec.dataset.cat === cat) {
-        sec.style.display = '';
-      } else {
-        sec.style.display = 'none';
-      }
+      sec.style.display = (cat === 'all' || sec.dataset.cat === cat) ? '' : 'none';
     });
 
-    if (cat !== 'all') {
-      document.getElementById(
-        cat === 'vinyl' ? 'cut-vinyl' : cat === 'tarot' ? 'tarot-art' : 'book-nook'
-      ).scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (cat === 'tarot') document.getElementById('tarot-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (cat === 'vinyl') document.getElementById('cut-vinyl').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
 
