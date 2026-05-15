@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Purple Star Signs — Concord, NC</title>
+  <meta name="description" content="Buy digital art downloads and cut vinyl decals from Purple Star Signs in Concord, NC. No custom order needed — grab it now and we ship it fast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:        #7c3aed;
+      --purple-dark:   #4c1d95;
+      --purple-deep:   #1e0a4c;
+      --purple-light:  #a78bfa;
+      --purple-pale:   #ede9fe;
+      --purple-subtle: #f5f3ff;
+      --text-dark:     #1a1a2e;
+      --text-mid:      #5a5a7a;
+      --border:        #ddd6fe;
+      --white:         #ffffff;
+      --radius:        1rem;
+      --radius-pill:   999px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ───────────────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    /* Replace the <span> below with: <img src="images/logo.png" alt="Purple Star Signs" style="height:44px;" /> */
+    .nav-logo-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: var(--purple);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--purple); }
+    .nav-links a.active { color: var(--purple); font-weight: 600; }
+
+    .btn-primary {
+      background: var(--purple);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--purple-dark); transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.9);
+      border: 1.5px solid rgba(255,255,255,0.45);
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #1e0a4c 0%, #5b21b6 55%, #7c3aed 100%);
+      color: var(--white);
+      padding: 4.5rem 1.5rem;
+    }
+    .hero-inner { max-width: 680px; margin: 0 auto; }
+
+    .badge {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      border-radius: var(--radius-pill);
+      padding: 0.3rem 1rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-outline {
+      display: inline-block;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 0.3rem 1rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 1.1rem;
+    }
+    .hero h1 span { color: var(--purple-light); }
+
+    .hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* ─── SECTIONS ───────────────────────────────────────── */
+    .section { padding: 3.5rem 1.5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .bg-subtle { background: var(--purple-subtle); }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.65rem, 4vw, 2.3rem);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    h2 span { color: var(--purple); }
+
+    .section-sub {
+      color: var(--text-mid);
+      font-size: 0.97rem;
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── PRODUCT GRID ───────────────────────────────────── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 10px 36px rgba(124,58,237,0.13);
+      transform: translateY(-3px);
+    }
+
+    /* Swap this div for <img src="your-photo.jpg" alt="..." /> when you have photos */
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--purple-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.25rem;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--purple);
+      margin-bottom: 0.35rem;
+    }
+
+    .product-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.12rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .product-desc {
+      font-size: 0.86rem;
+      color: var(--text-mid);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /*
+      BUY NOW BUTTONS
+      ────────────────
+      Replace the href="#" with your actual QuickBooks payment link.
+      To create a payment link in QuickBooks:
+        1. Log in to QuickBooks Online
+        2. Go to + New → Receive Payment  OR  Sales → Payment Links
+        3. Set the amount and description, then copy the shareable link
+        4. Paste it in place of the # below for that product
+    */
+    .btn-buy {
+      background: var(--purple);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 0.55rem 1.2rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-buy:hover { background: var(--purple-dark); }
+
+    /* ─── NOTE BOX ───────────────────────────────────────── */
+    .note-box {
+      background: var(--purple-subtle);
+      border: 1.5px solid var(--purple-pale);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      margin-top: 2rem;
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .note-box strong { color: var(--purple); }
+    .note-box a { color: var(--purple); }
+
+    /* ─── DARK "HOW IT WORKS" ────────────────────────────── */
+    .dark-section {
+      background: linear-gradient(135deg, #1e0a4c 0%, #3b1278 100%);
+      color: var(--white);
+    }
+    .dark-section .badge-outline {
+      border-color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8);
+    }
+    .dark-section h2 { color: var(--white); }
+    .dark-section h2 span { color: var(--purple-light); }
+    .dark-section .section-sub { color: rgba(255,255,255,0.72); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .step-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .step-card h3 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--white);
+    }
+    .step-card p {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.55;
+    }
+    .step-card a { color: var(--purple-light); }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: #0f0520;
+      color: rgba(255,255,255,0.65);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.84rem;
+    }
+    .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .footer-address { margin-bottom: 1.1rem; }
+    .footer-nav {
+      display: flex;
+      gap: 1.1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+      list-style: none;
+    }
+    .footer-nav a { color: var(--purple-light); text-decoration: none; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-copy { color: rgba(255,255,255,0.35); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+    }
+    @media (max-width: 420px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     NAVIGATION
+     Update the href links to match your actual page URLs.
+     ══════════════════════════════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="https://purplestarsigns.com">
+    <!-- If you have a logo image, replace this span with:
+         <img src="images/logo.png" alt="Purple Star Signs" style="height:44px;" /> -->
+    <span class="nav-logo-text">☆ Purple Star Signs</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="https://purplestarsigns.com/products">Products</a></li>
+    <li><a href="https://purplestarsigns.com/gallery">Gallery</a></li>
+    <li><a href="https://purplestarsigns.com/about">About &amp; Reviews</a></li>
+    <li><a href="https://purplestarsigns.com/videos">Videos</a></li>
+    <li><a href="https://purplestarsigns.com/social">Social</a></li>
+    <li><a href="https://purplestarsigns.com/blog">Blog</a></li>
+    <li><a href="https://purplestarsigns.com/web-services">Web Services</a></li>
+    <li><a href="shop.html" class="active">Shop</a></li>
+  </ul>
+
+  <a class="btn-primary" href="https://purplestarsigns.com/quote">Get a Quote</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="badge">Purple Star Signs — Online Shop</span>
+    <h1>Ready to Go.<br><span>No Custom Order Needed.</span></h1>
+    <p>Pick it, pay for it, and we'll handle the rest. Digital art files delivered to your inbox. Vinyl decals shipped from our shop right here in Downtown Concord.</p>
+    <div class="hero-btns">
+      <a href="#digital-downloads" class="btn-primary">Digital Downloads</a>
+      <a href="#cut-vinyl" class="btn-ghost">Cut Vinyl Decals</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     DIGITAL DOWNLOADS
+     ══════════════════════════════════════════════════════ -->
+<section class="section bg-subtle" id="digital-downloads">
+  <div class="section-inner">
+    <span class="badge-outline">Digital Downloads</span>
+    <h2>Art Files &amp; <span>Printable Designs</span></h2>
+    <p class="section-sub">Buy the file, get it emailed to you. Print it yourself or take it to any print shop. High-res files — no physical product shipped for these.</p>
+
+    <div class="product-grid">
+
+      <!-- ── DIGITAL PRODUCT 1 ──
+           Replace href="#QB-LINK-1" with your QuickBooks payment link for this item.
+           Replace the emoji div with <img src="images/art-print-1.jpg" alt="..." /> when ready. -->
+      <div class="product-card">
+        <div class="product-image">🖼️</div>
+        <div class="product-info">
+          <span class="product-tag">Instant Download</span>
+          <div class="product-name">Digital Wall Art Print</div>
+          <p class="product-desc">High-resolution print-ready file (PNG + PDF). Works at 4×6, 5×7, and 8×10. Great for homes, offices, and gifts. Emailed within 1 business day.</p>
+          <div class="product-footer">
+            <span class="product-price">$8.00</span>
+            <a class="btn-buy" href="#QB-LINK-1" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DIGITAL PRODUCT 2 ── -->
+      <div class="product-card">
+        <div class="product-image">✨</div>
+        <div class="product-info">
+          <span class="product-tag">Instant Download</span>
+          <div class="product-name">Motivational Quote Print</div>
+          <p class="product-desc">Bold, ready-to-frame motivational quote design. Comes in multiple print sizes. Instant high-res download after payment confirmed.</p>
+          <div class="product-footer">
+            <span class="product-price">$6.00</span>
+            <a class="btn-buy" href="#QB-LINK-2" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DIGITAL PRODUCT 3 ── -->
+      <div class="product-card">
+        <div class="product-image">⭐</div>
+        <div class="product-info">
+          <span class="product-tag">Instant Download</span>
+          <div class="product-name">Star &amp; Signs Clip Art Pack</div>
+          <p class="product-desc">A collection of star and sign-themed graphics in SVG + PNG format. Perfect for DIY projects, invitations, social media, and crafts.</p>
+          <div class="product-footer">
+            <span class="product-price">$12.00</span>
+            <a class="btn-buy" href="#QB-LINK-3" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+    <div class="note-box">
+      <strong>How digital delivery works:</strong> After you pay, send your order confirmation number to
+      <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a> and we'll email your file
+      within 1 business day. Questions? Call <a href="tel:7047234020">(704) 723-4020</a>.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     CUT VINYL DECALS
+     ══════════════════════════════════════════════════════ -->
+<section class="section" id="cut-vinyl">
+  <div class="section-inner">
+    <span class="badge-outline">Cut Vinyl Decals</span>
+    <h2>Stick It. <span>Show It Off.</span></h2>
+    <p class="section-sub">Small cut-vinyl decals made right here in our Concord shop. Car windows, laptops, water bottles, bumpers — anywhere that needs a little personality.</p>
+
+    <div class="product-grid">
+
+      <!-- ── VINYL PRODUCT 1 ── -->
+      <div class="product-card">
+        <div class="product-image">🔵</div>
+        <div class="product-info">
+          <span class="product-tag">Cut Vinyl · Ships in 2–3 Days</span>
+          <div class="product-name">3" Circle Vinyl Decal</div>
+          <p class="product-desc">Three-inch weatherproof cut-vinyl circle. Great for car windows, water bottles, and laptops. After you pay, email us your initials and color choice.</p>
+          <div class="product-footer">
+            <span class="product-price">$5.00</span>
+            <a class="btn-buy" href="#QB-LINK-4" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VINYL PRODUCT 2 ── -->
+      <div class="product-card">
+        <div class="product-image">⭕</div>
+        <div class="product-info">
+          <span class="product-tag">Cut Vinyl · Ships in 2–3 Days</span>
+          <div class="product-name">5" Circle Vinyl Decal</div>
+          <p class="product-desc">Five-inch weatherproof cut-vinyl circle — bigger, bolder, perfect for rear windows. After you pay, email us your initials and color choice.</p>
+          <div class="product-footer">
+            <span class="product-price">$8.00</span>
+            <a class="btn-buy" href="#QB-LINK-5" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VINYL PRODUCT 3 ── -->
+      <div class="product-card">
+        <div class="product-image">🏷️</div>
+        <div class="product-info">
+          <span class="product-tag">Cut Vinyl · Ships in 2–3 Days</span>
+          <div class="product-name">3-Pack · 3" Circle Decals</div>
+          <p class="product-desc">Three 3-inch circle decals for the price of two and a half. Great as gifts or to share with friends. Same initials or mix and match — just tell us.</p>
+          <div class="product-footer">
+            <span class="product-price">$12.00</span>
+            <a class="btn-buy" href="#QB-LINK-6" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+    <div class="note-box">
+      <strong>After you pay:</strong> Email <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>
+      with your order number, the <strong>initials or text</strong> you want, and your <strong>color choice.</strong>
+      We'll ship within 2–3 business days — or pick up free at 32 Union St S, Downtown Concord.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     HOW IT WORKS  (dark section)
+     ══════════════════════════════════════════════════════ -->
+<div class="dark-section">
+  <section class="section">
+    <div class="section-inner">
+      <span class="badge-outline">How It Works</span>
+      <h2>Three Steps.<br><span>That's It.</span></h2>
+      <p class="section-sub">No account required, no complicated checkout. Just pick it, pay it, and we take care of the rest.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-icon">1️⃣</span>
+          <h3>Pick Your Product</h3>
+          <p>Browse the shop above, find what you want, and click "Buy Now."</p>
+        </div>
+        <div class="step-card">
+          <span class="step-icon">2️⃣</span>
+          <h3>Pay Securely</h3>
+          <p>You'll land on a secure QuickBooks payment page. Pay by card — fast and safe, no account needed.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-icon">3️⃣</span>
+          <h3>Email Us Your Details</h3>
+          <p>Send your order number + any specifics (initials, color) to <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-icon">📦</span>
+          <h3>We Deliver</h3>
+          <p>Digital files arrive in your inbox within 1 business day. Vinyl ships in 2–3 days or pick up in Concord.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-brand">☆ Purple Star Signs</div>
+  <div class="footer-address">
+    32 Union St S · Concord, NC 28025 ·
+    <a href="tel:7047234020" style="color:var(--purple-light);">(704) 723-4020</a>
+  </div>
+  <ul class="footer-nav">
+    <li><a href="https://purplestarsigns.com">Home</a></li>
+    <li><a href="https://purplestarsigns.com/products">Products</a></li>
+    <li><a href="https://purplestarsigns.com/gallery">Gallery</a></li>
+    <li><a href="https://purplestarsigns.com/about">About &amp; Reviews</a></li>
+    <li><a href="shop.html">Shop</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Purple Star Signs · Concord, NC · In-House Production Since 2015</div>
+</footer>
+
+</body>
+</html>
