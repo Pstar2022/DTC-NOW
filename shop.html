@@ -62,22 +62,70 @@
       color: var(--purple);
       white-space: nowrap;
     }
-    .nav-links {
+    .nav-toggle {
       display: flex;
       align-items: center;
-      gap: 1.1rem;
-      flex-wrap: wrap;
-      list-style: none;
+      justify-content: center;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      width: 38px;
+      height: 38px;
+      font-size: 1.15rem;
+      cursor: pointer;
+      color: var(--text-dark);
+      margin-left: auto;
+      flex-shrink: 0;
     }
+    .nav-toggle:hover { background: var(--purple-subtle); }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      padding: 0.5rem 1.5rem 1rem;
+      z-index: 99;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li { border-bottom: 1px solid var(--purple-subtle); }
+    .nav-links li:last-child { border-bottom: none; }
     .nav-links a {
       text-decoration: none;
       color: var(--text-dark);
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-weight: 500;
+      padding: 0.7rem 0;
+      display: block;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--purple); }
     .nav-links a.active { color: var(--purple); font-weight: 600; }
+    .nav-quote { color: var(--purple) !important; font-weight: 700 !important; }
+
+    @media (min-width: 681px) {
+      nav { position: relative; }
+      .nav-toggle { display: none; }
+      .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        background: none;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+        gap: 1.1rem;
+      }
+      .nav-links li { border: none; }
+      .nav-links a { padding: 0; font-size: 0.88rem; display: inline; }
+    }
 
     .btn-primary {
       background: var(--purple);
@@ -426,7 +474,6 @@
     .btn-quote:hover { background: var(--purple); color: var(--white); }
 
     /* ─── RESPONSIVE ─────────────────────────────────────── */
-    @media (max-width: 680px) { .nav-links { display: none; } }
     @media (max-width: 420px) { .product-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -439,6 +486,7 @@
   <a class="nav-logo" href="https://purplestarsigns.com">
     <span class="nav-logo-text">☆ Purple Star Signs</span>
   </a>
+  <button class="nav-toggle" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
   <ul class="nav-links">
     <li><a href="https://purplestarsigns.com/products">Products</a></li>
     <li><a href="https://purplestarsigns.com/gallery">Gallery</a></li>
@@ -448,8 +496,8 @@
     <li><a href="https://purplestarsigns.com/blog">Blog</a></li>
     <li><a href="https://purplestarsigns.com/web-services">Web Services</a></li>
     <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="https://purplestarsigns.com/quote" class="nav-quote">Get a Quote</a></li>
   </ul>
-  <a class="btn-primary" href="https://purplestarsigns.com/quote">Get a Quote</a>
 </nav>
 
 
@@ -459,11 +507,11 @@
 <div class="hero">
   <div class="hero-inner">
     <span class="badge">Purple Star Signs — Online Shop</span>
-    <h1>Tarot Art.<br><span>Buy It Right Now.</span></h1>
-    <p>Digital art prints and cut vinyl decals — made in-house in Downtown Concord. Pay online, get your file the same day, or have your decal shipped to your door.</p>
+    <h1>Signs &amp; Art.<br><span>Buy It Right Now.</span></h1>
+    <p>Custom signs, banners, and original digital art — all made in-house in Downtown Concord. Pay online, we handle the rest.</p>
     <div class="hero-btns">
-      <a href="#original-art" class="btn-primary">Original Art</a>
-      <a href="#signs-print" class="btn-ghost">Signs &amp; Print</a>
+      <a href="#signs-print" class="btn-primary">Signs &amp; Print</a>
+      <a href="#original-art" class="btn-ghost">Original Art</a>
     </div>
   </div>
 </div>
@@ -474,9 +522,183 @@
      ══════════════════════════════════════════════════════ -->
 <div class="tab-bar" id="cat-tabs">
   <button class="active" onclick="filterTab(this,'all')">All Products</button>
-  <button onclick="filterTab(this,'original')">Original Art</button>
   <button onclick="filterTab(this,'signs')">Signs &amp; Print</button>
+  <button onclick="filterTab(this,'original')">Original Art</button>
 </div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SIGNS & PRINT
+     ══════════════════════════════════════════════════════ -->
+<section class="section bg-subtle" id="signs-print" data-cat="signs">
+  <div class="section-inner">
+    <span class="badge-outline">Signs &amp; Print · Made In-House · Downtown Concord</span>
+    <h2>Signs, Print &amp; <span>Apparel</span></h2>
+    <p class="section-sub">Standard pricing on the most common products — pay online, then email us your artwork and details. Everything made in-house at 32 Union St S.</p>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/onlinebanner.png" alt="Full Color 6x3 Single Sided Vinyl Banner with Grommets — Purple Star Signs Concord NC" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Vinyl Banner · Full Color</span>
+          <div class="product-name">3×6 Vinyl Banner</div>
+          <p class="product-desc">3 feet × 6 feet full-color vinyl banner. Grommets included. Indoor or outdoor. Same-day available — order by noon, pick up by 5pm in Downtown Concord.</p>
+          <div class="product-footer">
+            <span class="product-price">$70.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-2352e920cf16400cb8961466dddaac3795bf2cdf75ff4f2ea6ff226cc2c7a7a48fcf4899910d4566a090dc2f59d5b58a?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square">
+          <img src="image/corrogated-007.jpg" alt="18x24 Single Sided Corrugated Yard Sign — Purple Star Signs Concord NC" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Corrugated Yard Sign · Single Sided</span>
+          <div class="product-name">Yard Sign — Single Sided</div>
+          <p class="product-desc">18"×24" corrugated plastic yard sign, single sided, full color. H-stake included. Great for real estate, events, and promotions.</p>
+          <div class="product-footer">
+            <span class="product-price">$25.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-ad5383fb3edd4a8d8e13437c80f76a0d5188484aee674569a3594d8c3ad64785d9c87c0a412e47aa9dca745062b5fe2c?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square">
+          <img src="image/dscorostakes.jpg" alt="18x24 Double Sided Corrugated Yard Sign with H-Stakes — Purple Star Signs Concord NC" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Corrugated Yard Sign · Double Sided</span>
+          <div class="product-name">Yard Sign — Double Sided</div>
+          <p class="product-desc">18"×24" corrugated plastic yard sign, printed on both sides. H-stake included. Maximum visibility from every direction.</p>
+          <div class="product-footer">
+            <span class="product-price">$35.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-9fb276889b8a4f26b855c745e4572f06bb4b8477fd3c424c84bfbdd4d88aaa0c52af3d2aecae46ce8d6d867316cf7e62?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/magsontruck.jpg" alt="Custom Vehicle Magnets 24x12 inch pair — Purple Star Signs Concord NC" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Vehicle Magnets · Pair</span>
+          <div class="product-name">Vehicle Magnets — 24"×12" Pair</div>
+          <p class="product-desc">Pair of 24"×12" full-color vehicle magnets. Stick to any metal surface — doors, hoods, tailgates. Turn your vehicle into a billboard, take them off anytime.</p>
+          <div class="product-footer">
+            <span class="product-price">$75.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-0688391402e146d9b462f0d730e30f1dfc9f1e5bd9d5400e94870bdc4f67ca71347a4c5ed41846829e032e6cef13695b?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/metal-076.jpg" alt="Custom Aluminum Sign 12x18 inch Single Sided — Purple Star Signs Concord NC" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Aluminum Sign · Single Sided</span>
+          <div class="product-name">Aluminum Sign — 12"×18"</div>
+          <p class="product-desc">12"×18" aluminum sign, single sided, full color. Durable, rust-proof, and ready to hang. Perfect for business, parking, and property signs.</p>
+          <div class="product-footer">
+            <span class="product-price">$30.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-bd4bad6acdd5402ab4aa054b2abcfcb6a4ae8a4242c842bfa5819b043244e62013b17ea7d02640aeaaad00237646a038?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/easel-016.JPG" alt="Full Color 2x3 Foam Board Easel Sign — Purple Star Signs Concord NC" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Foam Board · Easel Sign</span>
+          <div class="product-name">Foam Board Easel Sign — 2'×3'</div>
+          <p class="product-desc">Full 2'×3' foam board easel sign, full color. Freestanding — no wall needed. Great for events, storefronts, lobbies, and grand openings.</p>
+          <div class="product-footer">
+            <span class="product-price">$50.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-8685f8533b264b4aa818fdb38d1735fd99548e5d50984322b2077927ce91b65f60731c199c104ec9b4570d65efed0acc?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/pedestal.png" alt="Custom Pedestal Sign — Purple Star Signs Concord NC" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Pedestal Sign · Full Color</span>
+          <div class="product-name">Pedestal Sign</div>
+          <p class="product-desc">Freestanding full-color pedestal sign — built in-house. Perfect for business entrances, parking areas, and permanent outdoor identification. <strong>Pick up only</strong> at 32 Union St S, Downtown Concord.</p>
+          <div class="product-footer">
+            <span class="product-price">$50.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-c955929ba07641dd8d084847a574926ea73590ce5d464e84bbb5024a93d53142372c7130327a4fa3a85f7a9f3b54e75f?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+    <!-- Custom & Complex Projects -->
+    <h3 style="font-family:'DM Serif Display',serif; font-size:1.4rem; margin: 2.5rem 0 0.35rem;">Need Something Custom?</h3>
+    <p style="color:var(--text-mid); font-size:0.93rem; margin-bottom:0;">These projects are always quoted by job — click "Get a Quote" and we'll get back to you same day.</p>
+
+    <div class="service-grid">
+      <div class="service-tile">
+        <span class="service-tile-icon">🏪</span>
+        <div class="service-tile-name">Storefront Lettering</div>
+        <p class="service-tile-desc">Window vinyl, channel letters, awning graphics, and full storefront builds.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🚛</span>
+        <div class="service-tile-name">Vehicle Lettering & Wraps</div>
+        <p class="service-tile-desc">Full wraps, partial wraps, lettering, and fleet graphics for any vehicle.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">💡</span>
+        <div class="service-tile-name">Lighted Sign Boxes</div>
+        <p class="service-tile-desc">Illuminated cabinet signs and backlit displays for maximum after-dark visibility.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🏗️</span>
+        <div class="service-tile-name">Large Outdoor Signs</div>
+        <p class="service-tile-desc">Monument signs, post & panel, and large-format outdoor installations.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🖼️</span>
+        <div class="service-tile-name">Wall Graphics & Murals</div>
+        <p class="service-tile-desc">Full-wall vinyl graphics, branded office murals, and decorative wall installs.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+      <div class="service-tile">
+        <span class="service-tile-icon">🎪</span>
+        <div class="service-tile-name">Trade Show Displays</div>
+        <p class="service-tile-desc">Retractable banners, table throws, backdrops, and full booth setups.</p>
+        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>After you pay:</strong> Email <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>
+      with your order number and artwork (PNG, PDF, AI, or EPS). Have questions first?
+      Call <a href="tel:7047234020">(704) 723-4020</a> — we're in Downtown Concord, Mon–Fri.
+    </div>
+  </div>
+</section>
+
+
+
+<hr class="section-divider" />
 
 
 <!-- ══════════════════════════════════════════════════════
@@ -581,9 +803,7 @@
       </div>
 
       <div class="product-card">
-        <div class="product-image tall">
-          <img src="image/art/an_empty_spatial_grid_lit_by.png" alt="Cosmic Awakening — sacred geometry art print" />
-        </div>
+        <div class="product-image tall" style="background:linear-gradient(135deg,#1e0a4c,#7c3aed);"></div>
         <div class="product-info">
           <span class="product-tag">Original Art · Digital Download</span>
           <div class="product-name">Cosmic Awakening</div>
@@ -606,162 +826,6 @@
 </section>
 
 <hr class="section-divider" />
-
-
-<!-- ══════════════════════════════════════════════════════
-     SIGNS & PRINT
-     ══════════════════════════════════════════════════════ -->
-<section class="section bg-subtle" id="signs-print" data-cat="signs">
-  <div class="section-inner">
-    <span class="badge-outline">Signs &amp; Print · Made In-House · Downtown Concord</span>
-    <h2>Signs, Print &amp; <span>Apparel</span></h2>
-    <p class="section-sub">Standard pricing on the most common products — pay online, then email us your artwork and details. Everything made in-house at 32 Union St S.</p>
-
-    <div class="product-grid">
-
-      <div class="product-card">
-        <div class="product-image landscape">
-          <img src="image/onlinebanner.png" alt="Full Color 6x3 Single Sided Vinyl Banner with Grommets — Purple Star Signs Concord NC" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Vinyl Banner · Full Color</span>
-          <div class="product-name">3×6 Vinyl Banner</div>
-          <p class="product-desc">3 feet × 6 feet full-color vinyl banner. Grommets included. Indoor or outdoor. Same-day available — order by noon, pick up by 5pm in Downtown Concord.</p>
-          <div class="product-footer">
-            <span class="product-price">$70.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-2352e920cf16400cb8961466dddaac3795bf2cdf75ff4f2ea6ff226cc2c7a7a48fcf4899910d4566a090dc2f59d5b58a?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image square">
-          <img src="image/corrogated-007.jpg" alt="18x24 Single Sided Corrugated Yard Sign — Purple Star Signs Concord NC" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Corrugated Yard Sign · Single Sided</span>
-          <div class="product-name">Yard Sign — Single Sided</div>
-          <p class="product-desc">18"×24" corrugated plastic yard sign, single sided, full color. H-stake included. Great for real estate, events, and promotions.</p>
-          <div class="product-footer">
-            <span class="product-price">$25.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-ad5383fb3edd4a8d8e13437c80f76a0d5188484aee674569a3594d8c3ad64785d9c87c0a412e47aa9dca745062b5fe2c?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image square">
-          <img src="image/dscorostakes.jpg" alt="18x24 Double Sided Corrugated Yard Sign with H-Stakes — Purple Star Signs Concord NC" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Corrugated Yard Sign · Double Sided</span>
-          <div class="product-name">Yard Sign — Double Sided</div>
-          <p class="product-desc">18"×24" corrugated plastic yard sign, printed on both sides. H-stake included. Maximum visibility from every direction.</p>
-          <div class="product-footer">
-            <span class="product-price">$35.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-9fb276889b8a4f26b855c745e4572f06bb4b8477fd3c424c84bfbdd4d88aaa0c52af3d2aecae46ce8d6d867316cf7e62?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image landscape">
-          <img src="image/magsontruck.jpg" alt="Custom Vehicle Magnets 24x12 inch pair — Purple Star Signs Concord NC" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Vehicle Magnets · Pair</span>
-          <div class="product-name">Vehicle Magnets — 24"×12" Pair</div>
-          <p class="product-desc">Pair of 24"×12" full-color vehicle magnets. Stick to any metal surface — doors, hoods, tailgates. Turn your vehicle into a billboard, take them off anytime.</p>
-          <div class="product-footer">
-            <span class="product-price">$75.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-0688391402e146d9b462f0d730e30f1dfc9f1e5bd9d5400e94870bdc4f67ca71347a4c5ed41846829e032e6cef13695b?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image landscape">
-          <img src="image/metal-076.jpg" alt="Custom Aluminum Sign 12x18 inch Single Sided — Purple Star Signs Concord NC" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Aluminum Sign · Single Sided</span>
-          <div class="product-name">Aluminum Sign — 12"×18"</div>
-          <p class="product-desc">12"×18" aluminum sign, single sided, full color. Durable, rust-proof, and ready to hang. Perfect for business, parking, and property signs.</p>
-          <div class="product-footer">
-            <span class="product-price">$30.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-bd4bad6acdd5402ab4aa054b2abcfcb6a4ae8a4242c842bfa5819b043244e62013b17ea7d02640aeaaad00237646a038?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image landscape">
-          <img src="image/easel-016.JPG" alt="Full Color 2x3 Foam Board Easel Sign — Purple Star Signs Concord NC" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Foam Board · Easel Sign</span>
-          <div class="product-name">Foam Board Easel Sign — 2'×3'</div>
-          <p class="product-desc">Full 2'×3' foam board easel sign, full color. Freestanding — no wall needed. Great for events, storefronts, lobbies, and grand openings.</p>
-          <div class="product-footer">
-            <span class="product-price">$50.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-8685f8533b264b4aa818fdb38d1735fd99548e5d50984322b2077927ce91b65f60731c199c104ec9b4570d65efed0acc?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /product-grid -->
-
-    <!-- Custom & Complex Projects -->
-    <h3 style="font-family:'DM Serif Display',serif; font-size:1.4rem; margin: 2.5rem 0 0.35rem;">Need Something Custom?</h3>
-    <p style="color:var(--text-mid); font-size:0.93rem; margin-bottom:0;">These projects are always quoted by job — click "Get a Quote" and we'll get back to you same day.</p>
-
-    <div class="service-grid">
-      <div class="service-tile">
-        <span class="service-tile-icon">🏪</span>
-        <div class="service-tile-name">Storefront Lettering</div>
-        <p class="service-tile-desc">Window vinyl, channel letters, awning graphics, and full storefront builds.</p>
-        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
-      </div>
-      <div class="service-tile">
-        <span class="service-tile-icon">🚛</span>
-        <div class="service-tile-name">Vehicle Lettering & Wraps</div>
-        <p class="service-tile-desc">Full wraps, partial wraps, lettering, and fleet graphics for any vehicle.</p>
-        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
-      </div>
-      <div class="service-tile">
-        <span class="service-tile-icon">💡</span>
-        <div class="service-tile-name">Lighted Sign Boxes</div>
-        <p class="service-tile-desc">Illuminated cabinet signs and backlit displays for maximum after-dark visibility.</p>
-        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
-      </div>
-      <div class="service-tile">
-        <span class="service-tile-icon">🏗️</span>
-        <div class="service-tile-name">Large Outdoor Signs</div>
-        <p class="service-tile-desc">Monument signs, post & panel, and large-format outdoor installations.</p>
-        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
-      </div>
-      <div class="service-tile">
-        <span class="service-tile-icon">🖼️</span>
-        <div class="service-tile-name">Wall Graphics & Murals</div>
-        <p class="service-tile-desc">Full-wall vinyl graphics, branded office murals, and decorative wall installs.</p>
-        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
-      </div>
-      <div class="service-tile">
-        <span class="service-tile-icon">🎪</span>
-        <div class="service-tile-name">Trade Show Displays</div>
-        <p class="service-tile-desc">Retractable banners, table throws, backdrops, and full booth setups.</p>
-        <a class="btn-quote" href="https://purplestarsigns.com/quote">Get a Quote →</a>
-      </div>
-    </div>
-
-    <div class="note-box">
-      <strong>After you pay:</strong> Email <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a>
-      with your order number and artwork (PNG, PDF, AI, or EPS). Have questions first?
-      Call <a href="tel:7047234020">(704) 723-4020</a> — we're in Downtown Concord, Mon–Fri.
-    </div>
-  </div>
-</section>
-
 
 
 <!-- ══════════════════════════════════════════════════════
@@ -832,8 +896,8 @@
       sec.style.display = (cat === 'all' || sec.dataset.cat === cat) ? '' : 'none';
     });
 
-    if (cat === 'original') document.getElementById('original-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (cat === 'signs')    document.getElementById('signs-print').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (cat === 'original') document.getElementById('original-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
 
