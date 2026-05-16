@@ -899,6 +899,35 @@
     if (cat === 'signs')    document.getElementById('signs-print').scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (cat === 'original') document.getElementById('original-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+  });
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', e => {
+    const nav = document.querySelector('.nav-links');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+      nav.classList.remove('open');
+    }
+  });
+
+  // Sync hero anchor links with the tab filter
+  const hashTabMap = { '#signs-print': ['signs', 1], '#original-art': ['original', 2] };
+  function activateTabForHash(hash) {
+    const entry = hashTabMap[hash];
+    if (!entry) return;
+    const tabs = document.querySelectorAll('#cat-tabs button');
+    filterTab(tabs[entry[1]], entry[0]);
+  }
+
+  document.querySelectorAll('a[href="#signs-print"], a[href="#original-art"]').forEach(link => {
+    link.addEventListener('click', () => activateTabForHash(link.getAttribute('href')));
+  });
+
+  if (window.location.hash) activateTabForHash(window.location.hash);
 </script>
 
 </body>
