@@ -62,22 +62,70 @@
       color: var(--purple);
       white-space: nowrap;
     }
-    .nav-links {
+    .nav-toggle {
       display: flex;
       align-items: center;
-      gap: 1.1rem;
-      flex-wrap: wrap;
-      list-style: none;
+      justify-content: center;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      width: 38px;
+      height: 38px;
+      font-size: 1.15rem;
+      cursor: pointer;
+      color: var(--text-dark);
+      margin-left: auto;
+      flex-shrink: 0;
     }
+    .nav-toggle:hover { background: var(--purple-subtle); }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      padding: 0.5rem 1.5rem 1rem;
+      z-index: 99;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li { border-bottom: 1px solid var(--purple-subtle); }
+    .nav-links li:last-child { border-bottom: none; }
     .nav-links a {
       text-decoration: none;
       color: var(--text-dark);
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-weight: 500;
+      padding: 0.7rem 0;
+      display: block;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--purple); }
     .nav-links a.active { color: var(--purple); font-weight: 600; }
+    .nav-quote { color: var(--purple) !important; font-weight: 700 !important; }
+
+    @media (min-width: 681px) {
+      nav { position: relative; }
+      .nav-toggle { display: none; }
+      .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        background: none;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+        gap: 1.1rem;
+      }
+      .nav-links li { border: none; }
+      .nav-links a { padding: 0; font-size: 0.88rem; display: inline; }
+    }
 
     .btn-primary {
       background: var(--purple);
@@ -426,7 +474,6 @@
     .btn-quote:hover { background: var(--purple); color: var(--white); }
 
     /* ─── RESPONSIVE ─────────────────────────────────────── */
-    @media (max-width: 680px) { .nav-links { display: none; } }
     @media (max-width: 420px) { .product-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -439,6 +486,7 @@
   <a class="nav-logo" href="https://purplestarsigns.com">
     <span class="nav-logo-text">☆ Purple Star Signs</span>
   </a>
+  <button class="nav-toggle" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
   <ul class="nav-links">
     <li><a href="https://purplestarsigns.com/products">Products</a></li>
     <li><a href="https://purplestarsigns.com/gallery">Gallery</a></li>
@@ -448,8 +496,8 @@
     <li><a href="https://purplestarsigns.com/blog">Blog</a></li>
     <li><a href="https://purplestarsigns.com/web-services">Web Services</a></li>
     <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="https://purplestarsigns.com/quote" class="nav-quote">Get a Quote</a></li>
   </ul>
-  <a class="btn-primary" href="https://purplestarsigns.com/quote">Get a Quote</a>
 </nav>
 
 
@@ -459,11 +507,11 @@
 <div class="hero">
   <div class="hero-inner">
     <span class="badge">Purple Star Signs — Online Shop</span>
-    <h1>Tarot Art.<br><span>Buy It Right Now.</span></h1>
-    <p>Digital art prints and cut vinyl decals — made in-house in Downtown Concord. Pay online, get your file the same day, or have your decal shipped to your door.</p>
+    <h1>Signs &amp; Art.<br><span>Buy It Right Now.</span></h1>
+    <p>Custom signs, banners, and original digital art — all made in-house in Downtown Concord. Pay online, we handle the rest.</p>
     <div class="hero-btns">
-      <a href="#original-art" class="btn-primary">Original Art</a>
-      <a href="#signs-print" class="btn-ghost">Signs &amp; Print</a>
+      <a href="#signs-print" class="btn-primary">Signs &amp; Print</a>
+      <a href="#original-art" class="btn-ghost">Original Art</a>
     </div>
   </div>
 </div>
@@ -474,138 +522,9 @@
      ══════════════════════════════════════════════════════ -->
 <div class="tab-bar" id="cat-tabs">
   <button class="active" onclick="filterTab(this,'all')">All Products</button>
-  <button onclick="filterTab(this,'original')">Original Art</button>
   <button onclick="filterTab(this,'signs')">Signs &amp; Print</button>
+  <button onclick="filterTab(this,'original')">Original Art</button>
 </div>
-
-
-<!-- ══════════════════════════════════════════════════════
-     ORIGINAL ART
-     ══════════════════════════════════════════════════════ -->
-<section class="section" id="original-art" data-cat="original">
-  <div class="section-inner">
-    <span class="badge-outline">Original Art · Digital Downloads</span>
-    <h2>Art From the <span>Inside Out.</span></h2>
-    <p class="section-sub">Original digital art inspired by personal thoughts, dreams, and the big questions — time, consciousness, creation, and what it means to be alive. Print and frame at any size.</p>
-
-    <div class="product-grid">
-
-      <div class="product-card">
-        <div class="product-image square">
-          <img src="image/art/meditation persuit.png" alt="The State I Pursue — chakra elements unity art print" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Original Art · Digital Download</span>
-          <div class="product-name">The State I Pursue</div>
-          <p class="product-desc">A meditating figure in full chakra alignment — fire, water, earth, and spirit orbiting in balance beneath the Tree of Life. The state of unity every soul reaches for.</p>
-          <div class="product-footer">
-            <span class="product-price">$15.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-0e9f9a841c42497b84a55ec1c98f58ff6f430106ab39437f96cf07fa153a69391a38880f432742d8b74de94269f304c9?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image square">
-          <img src="image/art/reflections of light through Prismatic water with vibrations everywhere.jpeg" alt="Prismatic Vibrations — light through water digital art print" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Original Art · Digital Download</span>
-          <div class="product-name">Prismatic Vibrations</div>
-          <p class="product-desc">A central star explodes outward in prismatic rays while light ripples through vibrating water below — rainbow interference patterns, floating spheres, and pure frequency made visible.</p>
-          <div class="product-footer">
-            <span class="product-price">$15.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-42360569011c48549f2fde296ef058050f6913287141448f9db71b0803296e5eb570908d28f74fda8be41713a549ee69?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image square">
-          <img src="image/art/meditation persuit2.png" alt="Elemental Ascension — chakra meditation art print" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Original Art · Digital Download</span>
-          <div class="product-name">Elemental Ascension</div>
-          <p class="product-desc">Fire and water rage as full landscapes on either side while a chakra figure on a floating island sends energy skyward — spiraling up through sacred geometry toward a golden sun at the apex.</p>
-          <div class="product-footer">
-            <span class="product-price">$15.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-845ecd14e59d41b5ac757a679d6bb3355ae09859919947dea7984eb4a9f01490d18dc229decb4380a06d28e556de92b8?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image landscape">
-          <img src="image/art/labrodorlite.png" alt="Golden Currents — teal and gold flow art print" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Original Art · Digital Download</span>
-          <div class="product-name">Golden Currents</div>
-          <p class="product-desc">Gold threads weave through deep teal currents while crystal orbs drift through the flow — bioluminescent, hypnotic, and alive. Like looking into the deep ocean from another universe.</p>
-          <div class="product-footer">
-            <span class="product-price">$15.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-0840558fe0db4671b7d6b221730101f064695bf47f5442209f1ba568e279e4ba49f9f8fb9780472d833a1bbfe3c4aac3?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image landscape">
-          <img src="image/art/9bd909dc-a687-4ef5-b601-9798e887a969.png" alt="The Creator — art print" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Original Art · Digital Download</span>
-          <div class="product-name">The Creator</div>
-          <p class="product-desc">A colossal stone figure carves with a brush while a solitary human walks the path below at sunrise. About the act of making, the scale of vision, and who guides the hand.</p>
-          <div class="product-footer">
-            <span class="product-price">$15.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-004ccf24da48471fbfc93e8570cf3b7d7dfc2f4b193747d7b185033f95faa0a115504cdcadcb4e77b3d61ea7c8fbc7da?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image landscape">
-          <img src="image/art/7d92f860-4722-45a0-9bdf-594ab30666b4.png" alt="The Universe Within — art print" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Original Art · Digital Download</span>
-          <div class="product-name">The Universe Within</div>
-          <p class="product-desc">A human mind holds cities, planets, and entire galaxies inside it. Vibrant, electric, and alive — a reminder that every thought is its own universe.</p>
-          <div class="product-footer">
-            <span class="product-price">$15.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-1baf72b27be349e1a2703112d01ff3617f294ab7f6fb4113a53f21e5864498c74315bd4397614d01bc6f93598c39c830?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image tall">
-          <img src="image/art/an_empty_spatial_grid_lit_by.png" alt="Cosmic Awakening — sacred geometry art print" />
-        </div>
-        <div class="product-info">
-          <span class="product-tag">Original Art · Digital Download</span>
-          <div class="product-name">Cosmic Awakening</div>
-          <p class="product-desc">A figure stands with arms raised inside a Flower of Life — planets and nebulae swirling all around, a beam of cosmic fire shooting skyward, and a quantum grid stretching to infinity below.</p>
-          <div class="product-footer">
-            <span class="product-price">$15.00</span>
-            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-07c97c8b5c594667b5c456b1a95ee137574158d5cac845e29a6382b8db21f08b4a88255a804f4aa68c26b82115f8c108?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /product-grid -->
-
-    <div class="note-box">
-      <strong>How digital delivery works:</strong> After paying, email your order confirmation number to
-      <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a> and we'll send your
-      high-res file within 1 business day. All files print beautifully at 8×10, 11×14, 16×20, and larger.
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider" />
 
 
 <!-- ══════════════════════════════════════════════════════
@@ -764,6 +683,136 @@
 
 
 
+<hr class="section-divider" />
+
+
+<!-- ══════════════════════════════════════════════════════
+     ORIGINAL ART
+     ══════════════════════════════════════════════════════ -->
+<section class="section" id="original-art" data-cat="original">
+  <div class="section-inner">
+    <span class="badge-outline">Original Art · Digital Downloads</span>
+    <h2>Art From the <span>Inside Out.</span></h2>
+    <p class="section-sub">Original digital art inspired by personal thoughts, dreams, and the big questions — time, consciousness, creation, and what it means to be alive. Print and frame at any size.</p>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-image square">
+          <img src="image/art/meditation persuit.png" alt="The State I Pursue — chakra elements unity art print" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Original Art · Digital Download</span>
+          <div class="product-name">The State I Pursue</div>
+          <p class="product-desc">A meditating figure in full chakra alignment — fire, water, earth, and spirit orbiting in balance beneath the Tree of Life. The state of unity every soul reaches for.</p>
+          <div class="product-footer">
+            <span class="product-price">$15.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-0e9f9a841c42497b84a55ec1c98f58ff6f430106ab39437f96cf07fa153a69391a38880f432742d8b74de94269f304c9?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square">
+          <img src="image/art/reflections of light through Prismatic water with vibrations everywhere.jpeg" alt="Prismatic Vibrations — light through water digital art print" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Original Art · Digital Download</span>
+          <div class="product-name">Prismatic Vibrations</div>
+          <p class="product-desc">A central star explodes outward in prismatic rays while light ripples through vibrating water below — rainbow interference patterns, floating spheres, and pure frequency made visible.</p>
+          <div class="product-footer">
+            <span class="product-price">$15.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-42360569011c48549f2fde296ef058050f6913287141448f9db71b0803296e5eb570908d28f74fda8be41713a549ee69?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image square">
+          <img src="image/art/meditation persuit2.png" alt="Elemental Ascension — chakra meditation art print" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Original Art · Digital Download</span>
+          <div class="product-name">Elemental Ascension</div>
+          <p class="product-desc">Fire and water rage as full landscapes on either side while a chakra figure on a floating island sends energy skyward — spiraling up through sacred geometry toward a golden sun at the apex.</p>
+          <div class="product-footer">
+            <span class="product-price">$15.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-845ecd14e59d41b5ac757a679d6bb3355ae09859919947dea7984eb4a9f01490d18dc229decb4380a06d28e556de92b8?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/art/labrodorlite.png" alt="Golden Currents — teal and gold flow art print" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Original Art · Digital Download</span>
+          <div class="product-name">Golden Currents</div>
+          <p class="product-desc">Gold threads weave through deep teal currents while crystal orbs drift through the flow — bioluminescent, hypnotic, and alive. Like looking into the deep ocean from another universe.</p>
+          <div class="product-footer">
+            <span class="product-price">$15.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-0840558fe0db4671b7d6b221730101f064695bf47f5442209f1ba568e279e4ba49f9f8fb9780472d833a1bbfe3c4aac3?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/art/9bd909dc-a687-4ef5-b601-9798e887a969.png" alt="The Creator — art print" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Original Art · Digital Download</span>
+          <div class="product-name">The Creator</div>
+          <p class="product-desc">A colossal stone figure carves with a brush while a solitary human walks the path below at sunrise. About the act of making, the scale of vision, and who guides the hand.</p>
+          <div class="product-footer">
+            <span class="product-price">$15.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-004ccf24da48471fbfc93e8570cf3b7d7dfc2f4b193747d7b185033f95faa0a115504cdcadcb4e77b3d61ea7c8fbc7da?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image landscape">
+          <img src="image/art/7d92f860-4722-45a0-9bdf-594ab30666b4.png" alt="The Universe Within — art print" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Original Art · Digital Download</span>
+          <div class="product-name">The Universe Within</div>
+          <p class="product-desc">A human mind holds cities, planets, and entire galaxies inside it. Vibrant, electric, and alive — a reminder that every thought is its own universe.</p>
+          <div class="product-footer">
+            <span class="product-price">$15.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-1baf72b27be349e1a2703112d01ff3617f294ab7f6fb4113a53f21e5864498c74315bd4397614d01bc6f93598c39c830?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image tall" style="background:linear-gradient(135deg,#1e0a4c,#7c3aed);"></div>
+        <div class="product-info">
+          <span class="product-tag">Original Art · Digital Download</span>
+          <div class="product-name">Cosmic Awakening</div>
+          <p class="product-desc">A figure stands with arms raised inside a Flower of Life — planets and nebulae swirling all around, a beam of cosmic fire shooting skyward, and a quantum grid stretching to infinity below.</p>
+          <div class="product-footer">
+            <span class="product-price">$15.00</span>
+            <a class="btn-buy" href="https://connect.intuit.com/pay/PurpleStarSignsInc/scs-v1-07c97c8b5c594667b5c456b1a95ee137574158d5cac845e29a6382b8db21f08b4a88255a804f4aa68c26b82115f8c108?locale=EN_US" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+    <div class="note-box">
+      <strong>How digital delivery works:</strong> After paying, email your order confirmation number to
+      <a href="mailto:info@purplestarsigns.com">info@purplestarsigns.com</a> and we'll send your
+      high-res file within 1 business day. All files print beautifully at 8×10, 11×14, 16×20, and larger.
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+
 <!-- ══════════════════════════════════════════════════════
      HOW IT WORKS
      ══════════════════════════════════════════════════════ -->
@@ -832,8 +881,8 @@
       sec.style.display = (cat === 'all' || sec.dataset.cat === cat) ? '' : 'none';
     });
 
-    if (cat === 'original') document.getElementById('original-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (cat === 'signs')    document.getElementById('signs-print').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (cat === 'original') document.getElementById('original-art').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
 
